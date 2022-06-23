@@ -1,0 +1,30 @@
+1. Membuat virtual env https://rahmadya.com/2020/08/10/virtual-environment-python-di-windows/
+2. test argument
+3. aktifkan venv e:\twitter\venv\scrpits\activate.bat
+4. install library pip install pandas swifter nltk Sastrawi
+
+
+== Mmebuat API menggunakan Flask dan integrasi Text Processing ==
+1. Membuat virtual env https://rahmadya.com/2020/08/10/virtual-environment-python-di-windows/
+2. C:\xampp\htdocs\skripsi\TextProcessing\Scripts\activate
+3. install library pip install pandas swifter nltk Sastrawi flask
+4. Test Flask (folder examples) => file penting untuk dasar API flask
+5. Run flask server (python file.py)
+Contoh output
+        (TextProcessing) C:\xampp\htdocs\skripsi\TextProcessing\examples>python method_get.py
+        * Serving Flask app 'method_get' (lazy loading)
+        * Environment: production
+        WARNING: This is a development server. Do not use it in a production deployment.
+        Use a production WSGI server instead.
+        * Debug mode: on
+        * Running on http://localhost:8001 (Press CTRL+C to quit)
+        * Restarting with stat
+        * Debugger is active!
+        * Debugger PIN: 987-004-407
+6. sekarang akses ke localhost:port (contoh: localhost:8001)
+== TEST SUDAH BERHASIL ==
+7. integrasi flask dengan text processing (nanti ada dua metode, bulk processing =>berupa file csv. dan single processing => berupa request json atau satu jawaban satu proses)
+8. membuat file api.py
+9. menggunakan request get dan lakukan test
+10. memasukkan codingan text processing ke api.py
+11. test pada project laravel
