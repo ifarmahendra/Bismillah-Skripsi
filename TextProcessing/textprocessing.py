@@ -107,7 +107,7 @@ def insertDfMhs(id, nama, golongan, jawaban, nilai_cosine):
     dbConfig = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="",
+        password="Ifarmahendra99",
         database="skripsi"
     )
     conn = dbConfig.cursor()
@@ -135,7 +135,7 @@ def insertDfKunci(id, kunci):
     dbConfig = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="",
+        password="Ifarmahendra99",
         database="skripsi"
     )
     conn = dbConfig.cursor()
@@ -274,7 +274,7 @@ while True:
             dbConfig = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="",
+                password="Ifarmahendra99",
                 database="skripsi"
             )
             conn = dbConfig.cursor()
