@@ -108,7 +108,7 @@ def insertDfMhs(id, nama, golongan, jawaban, nilai_cosine):
         host="127.0.0.1",
         user="root",
         password="Ifarmahendra99",
-        database="skripsi"
+        database="skripsi", auth_plugin='mysql_native_password'
     )
     conn = dbConfig.cursor()
     #proses cek apakah sudah pernah diproses, jika ya maka nilai akan di update, jika tidak maka akan di create
@@ -136,7 +136,7 @@ def insertDfKunci(id, kunci):
         host="127.0.0.1",
         user="root",
         password="Ifarmahendra99",
-        database="skripsi"
+        database="skripsi", auth_plugin='mysql_native_password'
     )
     conn = dbConfig.cursor()
     #proses cek apakah sudah pernah diproses, jika ya maka nilai akan di update, jika tidak maka akan di create
@@ -275,7 +275,7 @@ while True:
                 host="127.0.0.1",
                 user="root",
                 password="Ifarmahendra99",
-                database="skripsi"
+                database="skripsi", auth_plugin='mysql_native_password'
             )
             conn = dbConfig.cursor()
 
