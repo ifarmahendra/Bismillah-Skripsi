@@ -23,7 +23,7 @@ class AdminLearningJurnal extends Controller
         $matkul = Matkul::all();
         $matkulClass = new Matkul;
         $learning = LearningJurnal::with('matkul')->orderBy('created_at', 'desc')->get();
-        return view('admin.LearningJurnal', compact(
+        return view('admin.Learning', compact(
             'learning',
             'matkul',
             'matkulClass',
