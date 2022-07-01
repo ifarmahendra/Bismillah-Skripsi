@@ -97,7 +97,9 @@
                                                     $nilai = 'null';
                                                 }
                                                 @endphp
-                                                @if ($nilai >= 81)
+                                                @if ($nilai == 'null')
+                                                Nilai Masih Diproses
+                                                @elseif ($nilai >= 81)
                                                 A
                                                 @elseif ($nilai >= 76 AND $nilai <= 80) 
                                                 AB 
