@@ -105,7 +105,7 @@ def get_stemmed_term(document):
 def insertDfMhs(id, nama, golongan, jawaban, nilai_cosine):
     print("Insert Hasil TextProcessing Mahasiswa ID: {} ke db".format(id))
     dbConfig = mysql.connector.connect(
-        host="localhost",
+        host="127.0.0.1",
         user="root",
         password="Ifarmahendra99",
         database="skripsi"
@@ -133,7 +133,7 @@ def insertDfMhs(id, nama, golongan, jawaban, nilai_cosine):
 def insertDfKunci(id, kunci):
     print("Insert hasil TextProcessing Kunci Jawaban ID: {} ke db".format(id))
     dbConfig = mysql.connector.connect(
-        host="localhost",
+        host="127.0.0.1",
         user="root",
         password="Ifarmahendra99",
         database="skripsi"
@@ -272,7 +272,7 @@ while True:
             ids = job.split('|')[1]
             idSoal = ids.replace(';', ',')
             dbConfig = mysql.connector.connect(
-                host="localhost",
+                host="127.0.0.1",
                 user="root",
                 password="Ifarmahendra99",
                 database="skripsi"
