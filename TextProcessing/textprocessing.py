@@ -122,12 +122,12 @@ def insertDfMhs(id, nama, golongan, jawaban, nilai_cosine):
     if(checker == []):
         #create / insert ke db
         #merubah df ke json untuk dimasukkan ke db
-        conn.execute("INSERT INTO `hasils`(`formjawaban_id`, `nama_mahasiswa`, `golongan`, `hasil_processing`, `nilai_cosine`) VALUES (%s,%s,%s,%s,%s)", (id, nama, golongan, jawaban_plain, nilai_cosine))
+        conn.execute("INSERT INTO `hasils`(`formjawaban_id`, `nama_mahasiswa`, `golongan`, `hasil_processing`, `nilai_cosine`) VALUES (%s,%s,%s,%s,%s)", (id, nama, golongan, jawaban_plain, float(nilai_cosine)))
         dbConfig.commit()
     else:
         # update ke db
         # merubah df ke json untuk dimasukkan ke db
-        conn.execute("UPDATE hasils SET hasil_processing=%s, nilai_cosine=%s WHERE formjawaban_id=%s", (jawaban_plain, nilai_cosine, id))
+        conn.execute("UPDATE hasils SET hasil_processing=%s, nilai_cosine=%s WHERE formjawaban_id=%s", (jawaban_plain, float(nilai_cosine), id))
         dbConfig.commit()
 
 def insertDfKunci(id, kunci):
