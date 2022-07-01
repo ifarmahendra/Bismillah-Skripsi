@@ -318,10 +318,11 @@ while True:
                             job = jobs.read()
                             with open('data/jobs.txt', 'w') as deleteJobs:
                                 deleteJobs.write(job)
-    except:
+    except Exception, e:
         # supaya tampilan bagus xixixixi
         # os.system('cls||clear')
         print("Menunggu Jobs")
+        print(e)
     
     #limit berapa detik untuk text processing selanjutnya
     time.sleep(1)
