@@ -211,4 +211,4 @@ def job():
         })
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=8001, debug=True) #menjalankan server flask pada port 8001
+    app.run(port=8001, debug=True) #menjalankan server flask pada port 8001
