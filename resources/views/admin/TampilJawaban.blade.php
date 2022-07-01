@@ -90,7 +90,7 @@
                                                 {{date_format(date_create($dt->tanggal), 'd-M-Y H:i T')}}</td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
-                                                $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine ?? NULL,2)*100 ??'null'
+                                                $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine ?? 'null',2)*100 ??'null'
                                                 @endphp
                                                 @if ($nilai >= 81)
                                                 A
