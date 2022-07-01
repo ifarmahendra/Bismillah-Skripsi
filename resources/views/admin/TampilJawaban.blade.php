@@ -111,7 +111,8 @@
                                                 D 
                                                 @elseif ($nilai>= 0 AND $nilai <= 45) 
                                                 E
-                                                @elseif ($nilai == 'null') 'Nilai Masih Diproses'
+                                                @else
+                                                Nilai Masih Diproses
                                                 @endif </td> 
                                             <td> 
                                                 <a href="{{ route('filterjawaban.edit', ['filterjawaban' => $dt->id]) }}" class="btn btn-xs btn-primary">Detail</a>
