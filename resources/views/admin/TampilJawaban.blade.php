@@ -90,7 +90,7 @@
                                                 {{date_format(date_create($dt->tanggal), 'd-M-Y H:i T')}}</td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
-                                                $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100
+                                                $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100 ??'null'
                                                 @endphp
                                                 @if ($nilai >= 81)
                                                 A
@@ -106,7 +106,7 @@
                                                 D 
                                                 @elseif ($nilai>= 0 AND $nilai <= 45) 
                                                 E
-                                                @else Nilai Masih Diproses 
+                                                @elseif (nilai == 'null') 'Nilai Masih Diproses'
                                                 @endif </td> 
                                             <td> 
                                                 <a href="{{ route('filterjawaban.edit', ['filterjawaban' => $dt->id]) }}" class="btn btn-xs btn-primary">Detail</a>
