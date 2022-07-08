@@ -322,6 +322,10 @@ while True:
         # supaya tampilan bagus xixixixi
         # os.system('cls||clear')
         print("Menunggu Jobs")
+        try:
+            print(e)
+        except:
+            ...
     
     #limit berapa detik untuk text processing selanjutnya
     time.sleep(1)
