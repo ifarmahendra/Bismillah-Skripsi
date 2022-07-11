@@ -267,7 +267,7 @@ while True:
             job = tmp.readline()
             # prosess
             if(job not in ''):
-                print('Memproses job id: '+job.split('|')[0])
+                print('Memproses job id: '+job.split('|')[0]+' dengan id '+job.split('|')[1])
                 # jika tidak ada jawaban yang diproses
                 if not job.split('|')[1]:
                     # anggap job selesai, hapus di jobs.txt
