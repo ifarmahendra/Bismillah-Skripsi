@@ -271,6 +271,15 @@ while True:
             # Konek ke db disini
             ids = job.split('|')[1]
             idSoal = ids.replace(';', ',')
+            # jika tidak ada jawaban yang diproses
+            if(job.split('|')[1] == ''):
+                # anggap job selesai, hapus di jobs.txt
+                with open('data/jobs.txt', 'r') as jobs:
+                    next(jobs)
+                    job = jobs.read()
+                    with open('data/jobs.txt', 'w') as deleteJobs:
+                        deleteJobs.write(job)
+                continue
             dbConfig = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
@@ -279,7 +288,7 @@ while True:
             )
             conn = dbConfig.cursor()
 
-            conn.execute("SELECT * FROM form_jawabans WHERE id IN (%s) GROUP BY soal_id",(idSoal))
+            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") GROUP BY soal_id")
             groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
