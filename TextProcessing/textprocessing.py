@@ -268,18 +268,18 @@ while True:
             # prosess
             if(job not in ''):
                 print('Memproses job id: '+job.split('|')[0])
+                # jika tidak ada jawaban yang diproses
+                if not job.split('|')[1]:
+                    # anggap job selesai, hapus di jobs.txt
+                    with open('data/jobs.txt', 'r') as jobs:
+                        next(jobs)
+                        job = jobs.read()
+                        with open('data/jobs.txt', 'w') as deleteJobs:
+                            deleteJobs.write(job)
+                    continue
             # Konek ke db disini
             ids = job.split('|')[1]
             idSoal = ids.replace(';', ',')
-            # jika tidak ada jawaban yang diproses
-            if not job.split('|')[1]:
-                # anggap job selesai, hapus di jobs.txt
-                with open('data/jobs.txt', 'r') as jobs:
-                    next(jobs)
-                    job = jobs.read()
-                    with open('data/jobs.txt', 'w') as deleteJobs:
-                        deleteJobs.write(job)
-                continue
             dbConfig = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
