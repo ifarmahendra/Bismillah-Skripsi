@@ -270,7 +270,7 @@ while True:
                 print('Memproses job id: '+job.split('|')[0])
                 print(len(job.split('|')[1]))
                 # jika tidak ada jawaban yang diproses
-                if len(job.split('|')[1]) == 0:
+                if len(job.split('|')[1]) == 1:
                     # anggap job selesai, hapus di jobs.txt
                     with open('data/jobs.txt', 'r') as jobs:
                         next(jobs)
