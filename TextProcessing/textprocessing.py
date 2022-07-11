@@ -272,7 +272,7 @@ while True:
             ids = job.split('|')[1]
             idSoal = ids.replace(';', ',')
             # jika tidak ada jawaban yang diproses
-            if(job.split('|')[1] == ''):
+            if(job.split('|')[1] in ''):
                 # anggap job selesai, hapus di jobs.txt
                 with open('data/jobs.txt', 'r') as jobs:
                     next(jobs)
