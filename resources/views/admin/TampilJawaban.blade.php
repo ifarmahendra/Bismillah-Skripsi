@@ -89,14 +89,9 @@
                                             <td id="golongan-{{$dt->id}}">{{$dt->golongan}}</td>
                                             <td id="tanggal-{{$dt->id}}">
                                                 {{date_format(date_create($dt->tanggal), 'd-M-Y H:i T')}}</td>
-                                            <td id="nilai-{{$dt->id}}">@php
-                                                try {
-                                                    $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100;
-                                                } catch (\Throwable $th) {
-                                                    //throw $th;
-                                                    $nilai = 'null';
-                                                }
-                                                @endphp</td>
+                                            <td id="nilai-{{$dt->id}}">
+                                                {{$nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100;}}
+                                            </td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
                                                 try {
