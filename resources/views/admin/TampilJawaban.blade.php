@@ -96,10 +96,7 @@
                                                     //throw $th;
                                                     $nilai = 'null';
                                                 }
-                                                @endphp
-                                                @if ($nilai == 'null')
-                                                Nilai Masih Diproses
-                                                @endif</td>
+                                                @endphp</td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
                                                 try {
