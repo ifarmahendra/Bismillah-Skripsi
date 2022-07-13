@@ -48,7 +48,6 @@
                     	<label for="password" class="control-label">Password</label>
                       <div class="float-right">
                         <a href="auth-forgot-password.html" class="text-small">
-                          Lupa Password?
                         </a>
                       </div>
                     </div>
@@ -73,7 +72,7 @@
               </div>
             </div>
             <div class="simple-footer">
-              Copyright &copy; Stisla 2018
+              Copyright &copy; Skripsi 2022
             </div>
           </div>
         </div>

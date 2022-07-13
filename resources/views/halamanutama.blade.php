@@ -96,13 +96,12 @@
                                 </ul>
                             </div>
                         @endif
-                        <h1 class="mb-4 display-2 fw-bold">Selamat Datang<br
-                                class="d-block d-lg-none d-xl-block" />Di Learning Journal TIF</h1>
-                        <p class="mt-3 mb-4">1. Isi dengan informasi identitas, matakuliah, dan apa yang sudah anda pelajari saat
-                            selesai mengikuti perkuliahan di setiap minggunya.
+                        <h1 class="mb-4 display-2 fw-bold">Hai<br
+                                class="d-block d-lg-none d-xl-block" />Selamat Datang</h1>
+                        <p class="mt-3 mb-4">1. Silahkan mengisi Learning Journal sesuai dengan identitas diri dan silahkan menjawab pertanyaan yang ada
                             (maksimal 250 kata) 
                             <br />2. Ketika mengisi akan dianggap hadir dalam perkuliahan
-                            <br />3. Hanya diperbolehkan mengisi saat hari perkuliahan yang sama
+                            <br />3. Silahkan klik button Lanjut ketika Learning Journal sudah tersedia
                             @if(count($notification) > 0)
                             <h4 class="mb-2 ">Silahkan mengisi Learning Journal</h4>
                         </p><a class="btn btn-lg btn-info rounded-pill" href="{{route('forminput.index')}}" role="button">Lanjut</a>

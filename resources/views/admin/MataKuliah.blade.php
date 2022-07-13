@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <label class="mt-2">Nama Mata Kuliah</label>
-                                        <input type="text" name='mata_kuliah' class="form-control">
+                                        <input type="text" name='mata_kuliah' class="form-control" required>
                                     </div>
                                     <div class="modal-footer bg-whitesmoke br">
                                         <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
