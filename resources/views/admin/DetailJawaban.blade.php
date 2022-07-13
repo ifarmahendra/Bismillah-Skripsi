@@ -45,7 +45,11 @@ $title = "[ADMIN] Skripsi";
                                 readonly> {{$new::where('formjawaban_id', $filter->id)->first()->hasil_processing }}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Nilai</label>
+                            <label>Nilai Angka</label>
+                            <input type="text" class="form-control" value="$nilai =  round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine,2)*100" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Nilai Huruf</label>
                             <input type="text" class="form-control" value=" @php $nilai =  round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine,2)*100 @endphp @if ($nilai >= 81) A 
                             @elseif ($nilai >= 76 AND $nilai <= 80) AB 
                             @elseif ($nilai >= 71 AND $nilai <= 75) B
