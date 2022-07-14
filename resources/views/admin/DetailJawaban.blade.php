@@ -46,18 +46,51 @@ $title = "[ADMIN] Skripsi";
                         </div>
                         <div class="form-group">
                             <label>Nilai Angka</label>
-                            <input type="text" class="form-control" value="{{$nilai =  round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine,2)*100}}" readonly>
+                            <input type="text" class="form-control" 
+                            value="@php
+                                    try {
+                                        $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100;
+                                    } catch (\Throwable $th) {
+                                        //throw $th;
+                                        $nilai = 'null';
+                                    }
+                                    @endphp
+                                    @if ($nilai == 'null')
+                                    Nilai Masih Diproses
+                                    @else
+                                    {{$nilai}}
+                                    @endif" readonly>
                         </div>
                         <div class="form-group">
                             <label>Nilai Huruf</label>
-                            <input type="text" class="form-control" value=" @php $nilai =  round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine,2)*100 @endphp @if ($nilai >= 81) A 
-                            @elseif ($nilai >= 76 AND $nilai <= 80) AB 
-                            @elseif ($nilai >= 71 AND $nilai <= 75) B
-                            @elseif ($nilai >= 66 AND $nilai <= 70) BC 
-                            @elseif ($nilai >= 56 AND $nilai <= 65) C 
-                            @elseif ($nilai >= 46 AND $nilai <= 55) D 
-                            @elseif ($nilai >= 0 AND $nilai <= 45) E
-                            @else Nilai Masih Diproses @endif" readonly>
+                            <input type="text" class="form-control" 
+                            value=" @php
+                                    try {
+                                        $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100;
+                                    } catch (\Throwable $th) {
+                                        //throw $th;
+                                        $nilai = 'null';
+                                    }
+                                    @endphp
+                                    @if ($nilai == 'null')
+                                    Nilai Masih Diproses
+                                    @elseif ($nilai >= 81)
+                                    A
+                                    @elseif ($nilai >= 76 AND $nilai <= 80) 
+                                    AB 
+                                    @elseif ($nilai>= 71 AND $nilai <= 75) 
+                                    B 
+                                    @elseif ($nilai>= 66 AND $nilai <= 70) 
+                                    BC 
+                                    @elseif ($nilai>= 56 AND $nilai <= 65) 
+                                    C 
+                                    @elseif ($nilai>= 46 AND $nilai <= 55) 
+                                    D 
+                                    @elseif ($nilai>= 0 AND $nilai <= 45) 
+                                    E
+                                    @else
+                                    Nilai Masih Diproses
+                                    @endif" readonly>
                         </div>
                     </div>
                     <!-- <div class="card-footer text-right">
