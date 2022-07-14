@@ -100,8 +100,9 @@
                                                 @endphp
                                                 @if ($nilai == 'null')
                                                 Nilai Masih Diproses
-                                                @endif
+                                                @else
                                                 {{$nilai}}
+                                                @endif
                                             </td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
