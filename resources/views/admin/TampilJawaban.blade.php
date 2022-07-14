@@ -23,8 +23,13 @@
 
                             </div>
                             <div class="form-group">
-                                <label>Mata Kuliah</label>
-                                <input type="text" name="matkul" class="form-control" required>
+                                <label class="mt-2">Mata Kuliah</label>
+                                <select class="form-control" name="matkul" id="" required>
+                                    <option value="">Pilih Mata Kuliah</option>
+                                    @foreach ($matkul as $mk)
+                                    <option value="{{ $mk->mata_kuliah }}">{{ $mk->mata_kuliah }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <button type="submit" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i>
