@@ -27,7 +27,7 @@
                                 <select class="form-control" name="matkul_Id" id="" required>
                                     <option value="">Pilih Mata Kuliah</option>
                                     @foreach ($matkul as $mk)
-                                    <option value="{{ $mk->id }}">{{ $mk->mata_kuliah }}</option>
+                                    <option value="{{ $mk->mata_kuliah }}">{{ $mk->mata_kuliah }}</option>
                                     @endforeach
                                 </select>
                             </div>
