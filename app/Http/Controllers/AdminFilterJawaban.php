@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\FilterJawaban;
 use App\Models\FormJawaban;
 use App\Models\Hasil;
+use App\Models\Matkul;
 use PDF;
 
 class AdminFilterJawaban extends Controller
@@ -22,11 +23,13 @@ class AdminFilterJawaban extends Controller
      */
     public function index()
     {
+        $matkul = Matkul::all();
         $data = FilterJawaban::orderBy('created_at', 'desc')->get();
         $hasil = Hasil::all();
         return view('admin.FilterJawaban', compact(
             'data',
             'hasil',
+            'matkul'
         ));
     }
 
