@@ -46,20 +46,7 @@ $title = "[ADMIN] Skripsi";
                         </div>
                         <div class="form-group">
                             <label>Nilai Angka</label>
-                            <input type="text" class="form-control" 
-                            value="@php
-                                    try {
-                                        $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100;
-                                    } catch (\Throwable $th) {
-                                        //throw $th;
-                                        $nilai = 'null';
-                                    }
-                                    @endphp
-                                    @if ($nilai == 'null')
-                                    Nilai Masih Diproses
-                                    @else
-                                    {{$nilai}}
-                                    @endif" readonly>
+                            <input type="text" class="form-control" value="{{$nilai =  round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine,2)*100}}" readonly>
                         </div>
                         <div class="form-group">
                             <label>Nilai Huruf</label>
