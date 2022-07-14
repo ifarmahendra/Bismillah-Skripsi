@@ -98,9 +98,6 @@
                                                     $nilai = 'null';
                                                 }
                                                 @endphp
-                                                @if ($nilai == 'null')
-                                                Nilai Masih Diproses
-                                                @endif
                                             </td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
