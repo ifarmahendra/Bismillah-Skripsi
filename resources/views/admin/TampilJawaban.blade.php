@@ -90,7 +90,17 @@
                                             <td id="tanggal-{{$dt->id}}">
                                                 {{date_format(date_create($dt->tanggal), 'd-M-Y H:i T')}}</td>
                                             <td id="nilai-{{$dt->id}}">
-                                                {{$nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100 ?? 'Nilai Masih Diproses' ??}}
+                                                @php
+                                                try {
+                                                    $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100;
+                                                } catch (\Throwable $th) {
+                                                    //throw $th;
+                                                    $nilai = 'null';
+                                                }
+                                                @endphp
+                                                @if ($nilai == 'null')
+                                                Nilai Masih Diproses
+                                                @endif
                                             </td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
