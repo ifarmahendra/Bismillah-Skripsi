@@ -63,6 +63,7 @@ class AdminFilterJawaban extends Controller
                     ->where('matkul_id', $request->matkul)
                     ->get();
         $new = new Hasil;
+        $matkul = Matkul::all();
         // ketika tanpa foreach, hasil mirip spt ini => [{"id":8},{"id":9},{"id":10}]
         // return $filter;
         // jika filter tidak ada datanya
@@ -76,7 +77,7 @@ class AdminFilterJawaban extends Controller
         $jawabanMhs = substr($proccessToAPI, 0, -1);
         $result = file_get_contents(env('APP_URL').':8001/job?id='.$jawabanMhs); // request ke API
         if (json_decode($result, true)['status'] == 'success') {
-            return view('admin.TampilJawaban', compact('filter', 'new'));
+            return view('admin.TampilJawaban', compact('filter', 'new','matkul'));
         }else {
             return "ERROR";
         }
