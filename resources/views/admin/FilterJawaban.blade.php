@@ -24,7 +24,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="mt-2">Mata Kuliah</label>
-                                <select class="form-control" name="matkul_Id" id="" required>
+                                <select class="form-control" name="matkul" id="" required>
                                     <option value="">Pilih Mata Kuliah</option>
                                     @foreach ($matkul as $mk)
                                     <option value="{{ $mk->mata_kuliah }}">{{ $mk->mata_kuliah }}</option>
