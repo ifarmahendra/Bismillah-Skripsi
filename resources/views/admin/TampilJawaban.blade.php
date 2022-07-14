@@ -101,7 +101,7 @@
                                                 @if ($nilai == 'null')
                                                 Nilai Masih Diproses
                                                 @endif
-                                                @endphp
+                                                {{$nilai}}
                                             </td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
