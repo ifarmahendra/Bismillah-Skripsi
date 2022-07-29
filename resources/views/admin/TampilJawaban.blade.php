@@ -119,7 +119,7 @@
                                                 }
                                                 @endphp
                                                 @if ($nilai == 'null')
-                                                @if($dt->id)->first()->nilai_cosine == 0)
+                                                @if($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine == 0)
                                                 E
                                                 @else
                                                 Nilai Masih Diproses
