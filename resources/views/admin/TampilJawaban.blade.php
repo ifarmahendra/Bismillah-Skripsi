@@ -104,8 +104,11 @@
                                                 }
                                                 @endphp
                                                 @if ($nilai == 'null')
-                                                Nilai Masih Diproses
+                                                @if(round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine ?? 0,2)*100 == 0)
                                                 {{round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine ?? 0,2)*100}}
+                                                @else
+                                                Nilai Masih Diproses
+                                                @endif
                                                 @else
                                                 {{$nilai}}
                                                 @endif
