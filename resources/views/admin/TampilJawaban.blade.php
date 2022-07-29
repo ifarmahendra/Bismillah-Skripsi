@@ -97,7 +97,7 @@
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
                                                 try {
-                                                    $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100;
+                                                    $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine ?? 0,2)*100;
                                                 } catch (\Throwable $th) {
                                                     //throw $th;
                                                     $nilai = 'null';
