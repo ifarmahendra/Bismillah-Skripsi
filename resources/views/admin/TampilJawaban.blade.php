@@ -97,15 +97,15 @@
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
                                                 try {
-                                                    $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine ?? 0,2)*100;
+                                                    $nilai = round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine,2)*100;
                                                 } catch (\Throwable $th) {
                                                     //throw $th;
                                                     $nilai = 'null';
-                                                    echo $th;
                                                 }
                                                 @endphp
                                                 @if ($nilai == 'null')
                                                 Nilai Masih Diproses
+                                                {{round($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine ?? 0,2)*100}}
                                                 @else
                                                 {{$nilai}}
                                                 @endif
