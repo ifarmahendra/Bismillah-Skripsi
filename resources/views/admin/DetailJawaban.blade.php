@@ -50,7 +50,7 @@ $title = "[ADMIN] Skripsi";
                         </div>
                         <div class="form-group">
                             <label>Nilai Huruf</label>
-                            <input type="text" class="form-control" value=" @php $nilai =  round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine,2)*100 @endphp @if ($nilai >= 81) A 
+                            <input type="text" class="form-control" value=" @php $nilai =  round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine ?? 0,2)*100 @endphp @if ($nilai >= 81) A 
                             @elseif ($nilai >= 76 AND $nilai <= 80) AB 
                             @elseif ($nilai >= 71 AND $nilai <= 75) B
                             @elseif ($nilai >= 66 AND $nilai <= 70) BC 
