@@ -42,7 +42,7 @@ $title = "[ADMIN] Skripsi";
                         <div class="form-group mb-0">
                             <label>Jawaban</label>
                             <textarea class="form-input" aria-label="With textarea" cols="127" rows="10" style="width:100%"
-                                readonly> {{$new::where('formjawaban_id', $filter->id)->first()->hasil_processing }}</textarea>
+                                readonly> {{$new::where('formjawaban_id', $filter->id)->first()->hasil_processing ?? '-' }}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Nilai Angka</label>
