@@ -46,7 +46,7 @@ $title = "[ADMIN] Skripsi";
                         </div>
                         <div class="form-group">
                             <label>Nilai Angka</label>
-                            <input type="text" class="form-control" value="{{round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine,2)*100 ?? '0'}}" readonly>
+                            <input type="text" class="form-control" value="{{round($new::where('formjawaban_id', $filter->id)->first()->nilai_cosine ?? 0,2)*100}}" readonly>
                         </div>
                         <div class="form-group">
                             <label>Nilai Huruf</label>
