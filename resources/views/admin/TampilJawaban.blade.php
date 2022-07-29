@@ -101,6 +101,7 @@
                                                 } catch (\Throwable $th) {
                                                     //throw $th;
                                                     $nilai = 'null';
+                                                    echo $th;
                                                 }
                                                 @endphp
                                                 @if ($nilai == 'null')
