@@ -132,7 +132,7 @@
                                                 C 
                                                 @elseif ($nilai>= 46 AND $nilai <= 55) 
                                                 D 
-                                                @elseif ($nilai>= 0 AND $nilai <= 45) 
+                                                @elseif ($nilai>= 0 AND $nilai <= 45 OR $nilai==0) 
                                                 E
                                                 @else
                                                 Nilai Masih Diproses
