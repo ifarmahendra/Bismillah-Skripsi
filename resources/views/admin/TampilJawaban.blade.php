@@ -119,11 +119,7 @@
                                                 }
                                                 @endphp
                                                 @if ($nilai == 'null')
-                                                @if($new::where('formjawaban_id', $dt->id)->first()->nilai_cosine == 0)
                                                 E
-                                                @else
-                                                Nilai Masih Diproses
-                                                @endif
                                                 @elseif ($nilai >= 81)
                                                 A
                                                 @elseif ($nilai >= 76 AND $nilai <= 80) 
