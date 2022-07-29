@@ -119,7 +119,11 @@
                                                 }
                                                 @endphp
                                                 @if ($nilai == 'null')
+                                                @if($dt->id)->first()->nilai_cosine == 0)
+                                                E
+                                                @else
                                                 Nilai Masih Diproses
+                                                @endif
                                                 @elseif ($nilai >= 81)
                                                 A
                                                 @elseif ($nilai >= 76 AND $nilai <= 80) 
@@ -132,7 +136,7 @@
                                                 C 
                                                 @elseif ($nilai>= 46 AND $nilai <= 55) 
                                                 D 
-                                                @elseif ($nilai>= 0 AND $nilai <= 45 OR $nilai==0) 
+                                                @elseif ($nilai>= 0 AND $nilai <= 45) 
                                                 E
                                                 @else
                                                 Nilai Masih Diproses
