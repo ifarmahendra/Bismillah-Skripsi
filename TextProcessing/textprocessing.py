@@ -286,13 +286,13 @@ while True:
                 database="skripsi", auth_plugin='mysql_native_password'
             )
             conn = dbConfig.cursor()
-            if(ids.count(';') > 1):
-                idSoal = ids.replace(';', ',')
-                conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") GROUP BY soal_id")
-            else:
-                idSoal = ids.replace(';', '')
-                # idSoal = idSoal.replace('\n', '')
-                conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = {}".format(idSoal.replace('\n', '')))
+            # if(ids.count(';') > 1):
+            idSoal = ids.replace(';', ',')
+            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+"0) GROUP BY soal_id")
+            # else:
+            #     idSoal = ids.replace(';', '')
+            #     idSoal = idSoal.replace('\n', '')
+            #     conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = {}".format(idSoal))
             groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
