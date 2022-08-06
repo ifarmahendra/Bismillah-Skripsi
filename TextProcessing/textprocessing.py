@@ -291,8 +291,8 @@ while True:
                 conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") GROUP BY soal_id")
             else:
                 idSoal = ids.replace(';', '')
-                idSoal = idSoal.replace('\n', '')
-                conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = {}".format("'"+idSoal+"'"))
+                # idSoal = idSoal.replace('\n', '')
+                conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = {}".format(idSoal.replace('\n', '')))
             groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
