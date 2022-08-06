@@ -56,7 +56,7 @@ class AdminLearningJurnal extends Controller
             'end_date' => 'required',
         ]);
         try {
-            return $learning = LearningJurnal::where('start_date', '<=', $request->start_date)->where('end_date', '>=', $request->end_date)->get();
+            $learning = LearningJurnal::where('start_date', '<=', $request->start_date)->where('end_date', '>=', $request->end_date)->get();
             if ($learning == 0){
                 LearningJurnal::create([
                     'soal' => $request->soal,
