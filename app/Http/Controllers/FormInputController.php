@@ -46,16 +46,16 @@ class FormInputController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'email' => 'required',
-            'nama'=>'required',
-            'nim' => 'required',
-            'golongan' => 'required',
-            'matkul_id' => 'required',
-            'tanggal' => 'required',
-            'soal_id' => 'required',
-            'jawaban' => 'required',
-        ]);
+        // $validated = $request->validate([
+        //     'email' => 'required',
+        //     'nama'=>'required',
+        //     'nim' => 'required',
+        //     'golongan' => 'required',
+        //     'matkul_id' => 'required',
+        //     'tanggal' => 'required',
+        //     'soal_id' => 'required',
+        //     'jawaban' => 'required',
+        // ]);
         
         FormJawaban::create([
             'email' => $request->email,
