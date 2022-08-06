@@ -288,7 +288,7 @@ while True:
             )
             conn = dbConfig.cursor()
 
-            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") GROUP BY soal_id")
+            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") GROUP BY id")
             groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
@@ -306,7 +306,7 @@ while True:
                 with warnings.catch_warnings():
                     warnings.simplefilter('ignore', UserWarning)
                     # dataframe jawaban kunci
-                    df_kunci = pd.read_sql("SELECT * FROM `learning_jurnals` WHERE `soal` LIKE '"+soal[7]+"' LIMIT 1", dbConfig)
+                    df_kunci = pd.read_sql("SELECT * FROM `learning_jurnals` WHERE `soal` LIKE '"+soal[0]+"' LIMIT 1", dbConfig)
                     # print(df_kunci.head())
                 for kunciSoal in kunci:
                     # print("SOAL: "+soal[7])
@@ -315,7 +315,7 @@ while True:
                     with warnings.catch_warnings():
                         warnings.simplefilter('ignore', UserWarning)
                         # dataframe jawaban mhs
-                        df_jawabanMhs = pd.read_sql("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") AND `soal_id` LIKE '"+soal[7]+"'", dbConfig)
+                        df_jawabanMhs = pd.read_sql("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") AND `id` LIKE '"+soal[7]+"'", dbConfig)
                         # print(df_jawabanMhs.head())
                         # proses ke textprocessing
                         textprocessing(df_jawabanMhs, df_kunci)

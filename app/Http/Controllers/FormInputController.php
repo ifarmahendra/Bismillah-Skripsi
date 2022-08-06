@@ -67,7 +67,7 @@ class FormInputController extends Controller
                 'soal_id' => $request->soal_id,
                 'jawaban' => str_replace(";","",$request->jawaban), // hapus tanda ;
             ]);
-            $result = file_get_contents(env('APP_URL').':8001/job?id='.$jawaban->id); // request ke API
+            $result = file_get_contents(env('APP_URL').':8001/job?id='.$jawaban->id.';'); // request ke API
             if (json_decode($result, true)['status'] == 'success') {
                 return redirect()->route('index')->with('success', "Data Jawaban Anda Berhasil Terkirim");
             }else {
