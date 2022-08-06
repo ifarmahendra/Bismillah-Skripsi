@@ -280,7 +280,7 @@ while True:
             # Konek ke db disini
             ids = job.split('|')[1]
             # if(ids.count(';') > 1):
-            idSoal = ids.replace(';', ',')
+            idSoal = ids.replace(';', '')
             # else:
             #     idSoal = ids.replace(';', '')
             #     idSoal = idSoal.replace('\n', '')
