@@ -279,11 +279,6 @@ while True:
                     continue
             # Konek ke db disini
             ids = job.split('|')[1]
-            # if(ids.count(';') > 1):
-            idSoal = ids.replace(';', '')
-            # else:
-            #     idSoal = ids.replace(';', '')
-            #     idSoal = idSoal.replace('\n', '')
             dbConfig = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
@@ -291,8 +286,13 @@ while True:
                 database="skripsi", auth_plugin='mysql_native_password'
             )
             conn = dbConfig.cursor()
-
-            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = "+idSoal+" GROUP BY soal_id")
+            if(ids.count(';') > 1):
+                idSoal = ids.replace(';', ',')
+                conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") GROUP BY soal_id")
+            else:
+                idSoal = ids.replace(';', '')
+                idSoal = idSoal.replace('\n', '')
+                conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = %s GROUP BY soal_id", (idSoal))
             groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
