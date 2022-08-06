@@ -35,10 +35,6 @@ $title = "[ADMIN] Skripsi";
                             <input type="text" class="form-control"
                                 value="{{date_format(date_create($filter->tanggal), 'd-M-Y H:i T')}}" readonly>
                         </div>
-                        <div class="form-group">
-                            <label>Soal</label>
-                            <input type="text" class="form-control" value="{{$filter->soal_id}}" readonly>
-                        </div>
                         <div class="form-group mb-0">
                             <label>Jawaban</label>
                             <textarea class="form-input" aria-label="With textarea" cols="127" rows="10" style="width:100%"

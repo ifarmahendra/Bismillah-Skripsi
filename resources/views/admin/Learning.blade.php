@@ -158,7 +158,6 @@
                                                 <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
                                             </div>
                                         </th>
-                                        <th>Soal</th>
                                         <th>Kunci Jawaban</th>
                                         <th>Mata Kuliah</th>
                                         <th>Start date</th>
@@ -176,7 +175,6 @@
                                                 <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
                                             </div>
                                         </td>
-                                        <td id="soal-{{$lr->id}}">{{$lr->soal}}</td>
                                         <td id="kunci_jawaban-{{$lr->id}}">{{$lr->kunci_jawaban}}</td>
                                         <td id="matkul_Id-{{$lr->id}}">
                                             {{$matkulClass::where('id',$lr->matkul_Id)->first()->mata_kuliah ?? 'null'}}
