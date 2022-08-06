@@ -56,22 +56,34 @@ class FormInputController extends Controller
             'soal_id' => 'required',
             'jawaban' => 'required',
         ]);
-        try {
-            FormJawaban::create([
-                'email' => $request->email,
-                'nama'=>$request->nama,
-                'nim' => $request->nim,
-                'golongan' => $request->golongan,
-                'matkul_id' => $request->matkul_id,
-                'tanggal' => $request->tanggal,
-                'soal_id' => $request->soal_id,
-                'jawaban' => str_replace(";","",$request->jawaban), // hapus tanda ;
-            ]);
-            return redirect()->route('index')->with('success', "Data Jawaban Anda Berhasil Terkirim");
-        } catch (\Throwable $th) {
-            //throw $th;
-            return redirect()->back()->with('error', $th->getMessage());
-        }
+        
+        FormJawaban::create([
+            'email' => $request->email,
+            'nama'=>$request->nama,
+            'nim' => $request->nim,
+            'golongan' => $request->golongan,
+            'matkul_id' => $request->matkul_id,
+            'tanggal' => $request->tanggal,
+            'soal_id' => $request->soal_id,
+            'jawaban' => str_replace(";","",$request->jawaban), // hapus tanda ;
+        ]);
+        return redirect()->route('index')->with('success', "Data Jawaban Anda Berhasil Terkirim");
+        // try {
+        //     FormJawaban::create([
+        //         'email' => $request->email,
+        //         'nama'=>$request->nama,
+        //         'nim' => $request->nim,
+        //         'golongan' => $request->golongan,
+        //         'matkul_id' => $request->matkul_id,
+        //         'tanggal' => $request->tanggal,
+        //         'soal_id' => $request->soal_id,
+        //         'jawaban' => str_replace(";","",$request->jawaban), // hapus tanda ;
+        //     ]);
+        //     return redirect()->route('index')->with('success', "Data Jawaban Anda Berhasil Terkirim");
+        // } catch (\Throwable $th) {
+        //     //throw $th;
+        //     return redirect()->back()->with('error', $th->getMessage());
+        // }
     }
 
     /**
