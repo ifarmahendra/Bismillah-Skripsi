@@ -279,11 +279,11 @@ while True:
                     continue
             # Konek ke db disini
             ids = job.split('|')[1]
-            if(ids.count(';') > 1):
-                idSoal = ids.replace(';', ',')
-            else:
-                idSoal = ids.replace(';', '')
-                idSoal = idSoal.replace('\n', '')
+            # if(ids.count(';') > 1):
+            idSoal = ids.replace(';', ',')
+            # else:
+            #     idSoal = ids.replace(';', '')
+            #     idSoal = idSoal.replace('\n', '')
             dbConfig = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
@@ -292,7 +292,7 @@ while True:
             )
             conn = dbConfig.cursor()
 
-            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = "+idSoal+" GROUP BY soal_id")
+            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") GROUP BY soal_id")
             groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
