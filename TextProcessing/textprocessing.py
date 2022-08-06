@@ -292,7 +292,7 @@ while True:
             )
             conn = dbConfig.cursor()
 
-            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN (`"+idSoal+"`)")
+            conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN "+idSoal+" GROUP BY soal_id")
             groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
