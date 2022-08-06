@@ -67,23 +67,24 @@ class AdminFilterJawaban extends Controller
         // ketika tanpa foreach, hasil mirip spt ini => [{"id":8},{"id":9},{"id":10}]
         // return $filter;
         // jika filter tidak ada datanya
-        $proccessToAPI = "";
-        foreach($filter as $filterId){
-            $proccessToAPI .= $filterId->id.";";
-        }
+        // $proccessToAPI = "";
+        // foreach($filter as $filterId){
+        //     $proccessToAPI .= $filterId->id.";";
+        // }
         // ketika dilakukan foreach menjadi seperti ini => 8;9;10;
         // return $proccessToAPI;
         // jika ada data
-        $jawabanMhs = substr($proccessToAPI, 0, -1);
-        $result = file_get_contents(env('APP_URL').':8001/job?id='.$jawabanMhs); // request ke API
-        if (json_decode($result, true)['status'] == 'success') {
-            return view('admin.TampilJawaban', compact('filter', 'new','matkul'));
-        }else {
-            return "ERROR";
-        }
+        // $jawabanMhs = substr($proccessToAPI, 0, -1);
+        // $result = file_get_contents(env('APP_URL').':8001/job?id='.$jawabanMhs); // request ke API
+        // if (json_decode($result, true)['status'] == 'success') {
+        //     return view('admin.TampilJawaban', compact('filter', 'new','matkul'));
+        // }else {
+        //     return "ERROR";
+        // }
         // return view('admin.tampiljawaban', compact(
         //     'filter',
         // ));
+        return view('admin.TampilJawaban', compact('filter', 'new','matkul'));
 
         
     }
