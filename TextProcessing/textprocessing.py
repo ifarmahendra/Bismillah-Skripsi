@@ -279,11 +279,10 @@ while True:
                     continue
             # Konek ke db disini
             ids = job.split('|')[1]
-            print(ids.count(';'))
             if(ids.count(';') > 1):
                 idSoal = ids.replace(';', ',')
             else:
-                idSoal = ids.replace(';', '')
+                idSoal = ids.replace(';', ' ')
             dbConfig = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
