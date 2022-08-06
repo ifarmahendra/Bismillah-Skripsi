@@ -72,7 +72,7 @@ class AdminLearningJurnal extends Controller
 
         } catch (\Throwable $th) {
             //throw $th;
-            return redirect()->back()->with('error', $th->message());
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
