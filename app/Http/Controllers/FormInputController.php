@@ -46,44 +46,32 @@ class FormInputController extends Controller
      */
     public function store(Request $request)
     {
-        // $validated = $request->validate([
-        //     'email' => 'required',
-        //     'nama'=>'required',
-        //     'nim' => 'required',
-        //     'golongan' => 'required',
-        //     'matkul_id' => 'required',
-        //     'tanggal' => 'required',
-        //     'soal_id' => 'required',
-        //     'jawaban' => 'required',
-        // ]);
-        
-        FormJawaban::create([
-            'email' => $request->email,
-            'nama'=>$request->nama,
-            'nim' => $request->nim,
-            'golongan' => $request->golongan,
-            'matkul_id' => $request->matkul_id,
-            'tanggal' => $request->tanggal,
-            'soal_id' => $request->soal_id,
-            'jawaban' => str_replace(";","",$request->jawaban), // hapus tanda ;
+        $validated = $request->validate([
+            'email' => 'required',
+            'nama'=>'required',
+            'nim' => 'required',
+            'golongan' => 'required',
+            'matkul_id' => 'required',
+            'tanggal' => 'required',
+            'soal_id' => 'required',
+            'jawaban' => 'required',
         ]);
-        return redirect()->route('index')->with('success', "Data Jawaban Anda Berhasil Terkirim");
-        // try {
-        //     FormJawaban::create([
-        //         'email' => $request->email,
-        //         'nama'=>$request->nama,
-        //         'nim' => $request->nim,
-        //         'golongan' => $request->golongan,
-        //         'matkul_id' => $request->matkul_id,
-        //         'tanggal' => $request->tanggal,
-        //         'soal_id' => $request->soal_id,
-        //         'jawaban' => str_replace(";","",$request->jawaban), // hapus tanda ;
-        //     ]);
-        //     return redirect()->route('index')->with('success', "Data Jawaban Anda Berhasil Terkirim");
-        // } catch (\Throwable $th) {
-        //     //throw $th;
-        //     return redirect()->back()->with('error', $th->getMessage());
-        // }
+        try {
+            FormJawaban::create([
+                'email' => $request->email,
+                'nama'=>$request->nama,
+                'nim' => $request->nim,
+                'golongan' => $request->golongan,
+                'matkul_id' => $request->matkul_id,
+                'tanggal' => $request->tanggal,
+                'soal_id' => $request->soal_id,
+                'jawaban' => str_replace(";","",$request->jawaban), // hapus tanda ;
+            ]);
+            return redirect()->route('index')->with('success', "Data Jawaban Anda Berhasil Terkirim");
+        } catch (\Throwable $th) {
+            //throw $th;
+            return redirect()->back()->with('error', $th->getMessage());
+        }
     }
 
     /**

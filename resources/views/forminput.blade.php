@@ -56,9 +56,9 @@
                             <input type="datetime-local" class="form-input" name="tanggal" id="tanggal" required="required" />
                         </div>
                             @foreach($learning as $lr )
-                            <input type="hidden" class="form-input" name="matkul_id"
+                            <input type="hidden" class="form-input" name="soal_id"
                                 value="{{$lr->id}}"
-                                id="matkul_id" required="required" readonly>
+                                id="soal_id" required="required" readonly>
                             @endforeach
                         <div class="form-group form-group-textarea mb-md-0">
                             <label for="jawaban">Jawaban</label>
