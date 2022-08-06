@@ -46,7 +46,7 @@ class FormInputController extends Controller
      */
     public function store(Request $request)
     {
-        return $result;
+        return $request;
         $validated = $request->validate([
             'email' => 'required',
             'nama'=>'required',
