@@ -25,6 +25,7 @@
                     </div>
                     @endif
                     @if (session('error'))
+                    <br>
                     <div class="alert alert-danger" role="alert">
                         {!!session('error')!!}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
