@@ -54,11 +54,12 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
-                                        <label class="mt-2">Soal</label>
-                                        <textarea type="text" name='soal' class="form-control" id="reschedule-form-soal"
+                                    <!-- <div class="modal-body">
+                                        <label class="mt-2">Soal</label> -->
+                                        <input type="hidden" name="soal" value="{{uid()}}">
+                                        <!-- <textarea type="text" name='soal' class="form-control" id="reschedule-form-soal"
                                             cols="30" rows="10" required></textarea>
-                                    </div>
+                                    </div> -->
                                     <div class="modal-body">
                                         <label class="mt-2">Kunci Jawaban</label>
                                         <textarea type="text" name='kunci_jawaban' class="form-control"
