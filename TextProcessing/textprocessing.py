@@ -283,6 +283,7 @@ while True:
                 idSoal = ids.replace(';', ',')
             else:
                 idSoal = ids.replace(';', '')
+                idSoal = idSoal.replace('\n', '')
             dbConfig = mysql.connector.connect(
                 host="127.0.0.1",
                 user="root",
