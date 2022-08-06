@@ -292,7 +292,7 @@ while True:
             else:
                 idSoal = ids.replace(';', '')
                 idSoal = idSoal.replace('\n', '')
-                conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = {}".format(str(idSoal)))
+                conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = {}".format("'"+idSoal+"'"))
             groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
