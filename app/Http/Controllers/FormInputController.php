@@ -70,7 +70,7 @@ class FormInputController extends Controller
             return redirect()->route('index')->with('success', "Data Jawaban Anda Berhasil Terkirim");
         } catch (\Throwable $th) {
             //throw $th;
-            return redirect()->back()->with('error', $th->message);
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
