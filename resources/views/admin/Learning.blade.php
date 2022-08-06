@@ -56,7 +56,7 @@
                                     </div>
                                     <!-- <div class="modal-body">
                                         <label class="mt-2">Soal</label> -->
-                                        <input type="hidden" name="soal" value="{{uid()}}">
+                                        <input type="hidden" name="soal" value="{{uniqid()}}">
                                         <!-- <textarea type="text" name='soal' class="form-control" id="reschedule-form-soal"
                                             cols="30" rows="10" required></textarea>
                                     </div> -->
