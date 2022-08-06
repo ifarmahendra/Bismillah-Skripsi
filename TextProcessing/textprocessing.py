@@ -289,11 +289,12 @@ while True:
             if(ids.count(';') > 1):
                 idSoal = ids.replace(';', ',')
                 conn.execute("SELECT * FROM `form_jawabans` WHERE `id` IN ("+idSoal+") GROUP BY soal_id")
+                groupSoal = conn.fetchall()
             else:
                 idSoal = ids.replace(';', '')
                 idSoal = idSoal.replace('\n', '')
                 conn.execute("SELECT * FROM `form_jawabans` WHERE `id` = {}".format(idSoal))
-            groupSoal = conn.fetchall()
+                groupSoal = conn.fetchall()
             # jika tidak ada soal
             if(groupSoal == []):
                 # anggap job selesai, hapus di jobs.txt
