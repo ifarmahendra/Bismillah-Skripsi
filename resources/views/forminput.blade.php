@@ -57,7 +57,7 @@
                         </div>
                             @foreach($learning as $lr )
                             <input type="hidden" class="form-input" name="soal_id"
-                                value="{{$lr->id}}"
+                                value="{{$lr->soal}}"
                                 id="soal_id" required="required" readonly>
                             @endforeach
                         <div class="form-group form-group-textarea mb-md-0">
