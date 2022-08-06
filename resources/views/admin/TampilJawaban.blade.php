@@ -165,9 +165,7 @@
         //     $('#table-1').DataTable();
         // });
         $("#table").dataTable({
-            "columnDefs": [
-                { "sortable": false, "targets": [2] }
-            ],
+            order: [[2, 'desc']],
             "pageLength":5
         });
     </script>
