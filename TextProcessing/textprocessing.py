@@ -310,7 +310,7 @@ while True:
                 with warnings.catch_warnings():
                     warnings.simplefilter('ignore', UserWarning)
                     # dataframe jawaban kunci
-                    df_kunci = pd.read_sql("SELECT * FROM `learning_jurnals` WHERE `soal` LIKE '"+soal[0]+"' LIMIT 1", dbConfig)
+                    df_kunci = pd.read_sql("SELECT * FROM `learning_jurnals` WHERE `soal` LIKE '"+soal[7]+"' LIMIT 1", dbConfig)
                     # print(df_kunci.head())
                 for kunciSoal in kunci:
                     # print("SOAL: "+soal[7])
