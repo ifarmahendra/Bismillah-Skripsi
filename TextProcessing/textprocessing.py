@@ -279,6 +279,7 @@ while True:
                     continue
             # Konek ke db disini
             ids = job.split('|')[1]
+            print(ids.count(';'))
             if(ids.count(';') > 1):
                 idSoal = ids.replace(';', ',')
             else:
