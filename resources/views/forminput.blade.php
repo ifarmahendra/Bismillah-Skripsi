@@ -54,13 +54,13 @@
                         <div class="form-group">
                             <label for="tanggal">Tanggal Perkuliahan</label>
                             <input type="datetime-local" class="form-input" name="tanggal" id="tanggal" required="required" />
-                        </div>
-                        <div class="form-group">
-                            <label for="soal_id">Soal</label>
+                        </div>l>
                             @foreach($learning as $lr )
-                            <textarea class="form-input" name="soal_id" id="soal_id" cols="75" rows="10" style="width:100%" required="required" readonly>{{$lr->soal}}</textarea>
+                            <input type="hidden" class="form-input" name="matkul_id"
+                                value="{{$lr->id}}"
+                                id="matkul_id" required="required" readonly>
+                            <textarea class="form-input" name="soal_id" id="soal_id" cols="75" rows="10" style="width:100%" required="required" readonly>{{$lr->id}}</textarea>
                             @endforeach
-                        </div>
                         <div class="form-group form-group-textarea mb-md-0">
                             <label for="jawaban">Jawaban</label>
                             <textarea type="text" class="form-input" aria-label="With textarea" name="jawaban"

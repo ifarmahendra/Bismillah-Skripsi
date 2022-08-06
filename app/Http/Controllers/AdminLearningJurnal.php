@@ -56,14 +56,20 @@ class AdminLearningJurnal extends Controller
             'end_date' => 'required',
         ]);
         try {
-            LearningJurnal::create([
-                'soal' => $request->soal,
-                'kunci_jawaban' => $request->kunci_jawaban,
-                'matkul_Id'=>$request->matkul_Id,
-                'start_date' => $request->start_date,
-                'end_date' => $request->end_date,
-            ]);
-            return redirect()->back()->with('success', "Berhasil Menambahkan Data");
+            $learning = LearningJurnal::where('start_date', '<=', $request->start_date)->orWhere('end_date', '>=', $request->end_date)->count();
+            if ($learning == 0){
+                LearningJurnal::create([
+                    'soal' => $request->soal,
+                    'kunci_jawaban' => $request->kunci_jawaban,
+                    'matkul_Id'=>$request->matkul_Id,
+                    'start_date' => $request->start_date,
+                    'end_date' => $request->end_date,
+                ]);
+                return redirect()->back()->with('success', "Berhasil Menambahkan Data");
+            }else{
+                return redirect()->back()->with('error', "Tidak Dapat Menambahkan Data");
+            }
+
         } catch (\Throwable $th) {
             //throw $th;
             return redirect()->back()->with('error', $th->message);
