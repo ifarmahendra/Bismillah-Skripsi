@@ -74,9 +74,9 @@
                                             <th>Nama Mahasiswa</th>
                                             <th>Golongan</th>
                                             <th>Tanggal Perkuliahan</th>
-                                            <th></th>
-                                            <th>Nilai Angka</th>
-                                            <th>Nilai Huruf</th>
+                                            <th>Nilai</th>
+                                            <th>Konversi Nilai Angka</th>
+                                            <th>Konversi Nilai Huruf</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
