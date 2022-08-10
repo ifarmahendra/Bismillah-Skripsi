@@ -94,6 +94,7 @@
                                             <td id="golongan-{{$dt->id}}">{{$dt->golongan}}</td>
                                             <td id="tanggal-{{$dt->id}}">
                                                 {{date_format(date_create($dt->tanggal), 'd-M-Y H:i T')}}</td>
+                                            <td></td>
                                             <td id="nilai-{{$dt->id}}">
                                                 @php
                                                 try {
