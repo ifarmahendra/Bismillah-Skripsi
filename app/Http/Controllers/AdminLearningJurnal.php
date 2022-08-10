@@ -107,7 +107,7 @@ class AdminLearningJurnal extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validated = $request->validate([
             'soal' => 'required',
             'kunci_jawaban' => 'required',
             'matkul_Id'=>'required',
@@ -115,17 +115,23 @@ class AdminLearningJurnal extends Controller
             'end_date' => 'required',
         ]);
         try {
-            LearningJurnal::where('id', $id)->update([
-                'soal' => $request->soal,
-                'kunci_jawaban' => $request->kunci_jawaban,
-                'matkul_Id'=>$request->matkul_Id,
-                'start_date' => $request->start_date,
-                'end_date' => $request->end_date,
-            ]);
-            return redirect()->back()->with('success', "Berhasil Update Data");
+            $learning = LearningJurnal::where('start_date', '<=', $request->start_date)->where('end_date', '>=', $request->end_date)->count();
+            if ($learning == 0){
+                LearningJurnal::where('id', $id)->update([
+                    'soal' => $request->soal,
+                    'kunci_jawaban' => $request->kunci_jawaban,
+                    'matkul_Id'=>$request->matkul_Id,
+                    'start_date' => $request->start_date,
+                    'end_date' => $request->end_date,
+                ]);
+                return redirect()->back()->with('success', "Berhasil Update Data");
+            }else{
+                return redirect()->back()->with('error', "Tidak Dapat Update Data");
+            }
+
         } catch (\Throwable $th) {
             //throw $th;
-            return redirect()->back()->with('error', $th->message);
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 

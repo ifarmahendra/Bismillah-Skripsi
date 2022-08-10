@@ -109,8 +109,9 @@
                                     </div>
                                     <div class="modal-body">
 
-                                        <label class="mt-2">Soal</label>
-                                        <textarea name="soal" id="soal" cols="58" rows="10">{{$data->soal}}</textarea>
+                                        <!-- <label class="mt-2">Soal</label>
+                                        <textarea name="soal" id="soal" cols="58" rows="10">{{$data->soal}}</textarea> -->
+                                        <input type="hidden" name="soal" value="{{uniqid()}}">
 
                                         <label class="mt-2">Kunci Jawaban</label>
                                         <textarea name="kunci_jawaban" id="kunci_jawaban" cols="58"
